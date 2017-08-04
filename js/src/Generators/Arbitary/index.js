@@ -1,5 +1,3 @@
-//var template = require('es6-template-strings');
-// You can reuse same templates:
 import compile from 'es6-template-strings/compile';
 import resolveToString from 'es6-template-strings/resolve-to-string';
 import fs from 'fs';
@@ -9,10 +7,6 @@ import BasicGenerator from '../BasicGenerator';
 
 export default class ArbitaryGenerator extends BasicGenerator
 {
-  constructor()
-  {
-    super();
-  }
 
   questions()
   {

@@ -3,15 +3,28 @@ import resolveToString from 'es6-template-strings/resolve-to-string';
 import fs from 'fs';
 import path from 'path';
 import rimraf from 'rimraf';
+import _ from 'lodash';
 import questionsArray from './questions';
 import BasicGenerator from '../BasicGenerator';
 import * as Helper from './helpers.js';
 
 export default class Generator extends BasicGenerator
 {
-  constructor()
+  constructor(params)
   {
-    super();
+    super(params);
+
+    if (!_.has(params, 'path'))
+    {
+      throw new Error('Path must be supplied to proceed with generation');
+    }
+    else
+    {
+      if (!fs.accessAsync(params.path, fs.constants.R_OK | fs.constants.W_OK))
+      {
+        throw new Error('Path is not accessible by the generator');
+      }
+    }
   }
 
   questions()
@@ -96,7 +109,8 @@ export default class Generator extends BasicGenerator
 
   generate(input)
   {
-    var paths = this._prepareFolderStructure(input.generationPath, input.componentName, input.shallOverwrite);
+    console.log('path: ' + this.params.path);
+    var paths = this._prepareFolderStructure(this.params.path, input.componentName, input.shallOverwrite);
 
     var loadingComponentFileName = input.componentName + 'LoadingComponent.js';
     var successComponentFileName = input.componentName + 'SuccessComponent.js';

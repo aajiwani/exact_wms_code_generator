@@ -2,10 +2,12 @@
   "name": "jscodegenerator",
   "version": "1.0.0",
   "description": "A code generator for JavaScript",
-  "main": "index.js",
+  "main": "./distribution/src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-node --presets es2015 index.js"
+    "start": "babel-node --presets es2015 index.js",
+    "build": "babel js --presets babel-preset-es2015 --out-dir distribution --copy-files",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "code",

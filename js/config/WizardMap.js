@@ -4,14 +4,14 @@ import availableGenerators from './AvailableGenerators';
 
 var generatorsFolder = path.resolve(__dirname, '..', 'src', 'Generators');
 
-export function GetFileObject(name)
+export function GetFileObject(name, params)
 {
   var filtered = _.filter(availableGenerators, { name: name });
   if (filtered.length === 1)
   {
     var fileName = path.resolve(generatorsFolder, filtered[0].file);
     var respondantClass = require(`${fileName}`).default;
-    return new respondantClass();
+    return new respondantClass(params);
   }
   else
   {

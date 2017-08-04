@@ -20,16 +20,6 @@ export default [
     default: true
   },
   {
-    name: 'generationPath',
-    type: 'input',
-    message: 'Enter folder to generate the component at:',
-    validate: function( value )
-    {
-      return fs.accessAsync(value, fs.constants.R_OK | fs.constants.W_OK)
-        .then(() => true);
-    }
-  },
-  {
     name: 'isSeperateScreen',
     type: 'confirm',
     message: 'Will this component be used as a seperate screen? :',
