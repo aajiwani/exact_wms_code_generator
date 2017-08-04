@@ -1,0 +1,4 @@
+import React from 'react';
+import EOLLoading from '@wms_react_components/EOLLoading';
+
+export default (<EOLLoading backColor={'white'} titleText={''} activityIndicatorColor={'black'} />);

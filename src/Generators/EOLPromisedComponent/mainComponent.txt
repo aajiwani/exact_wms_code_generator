@@ -1,0 +1,11 @@
+import EOLPromisedComponent from '@wms_react_components/EOLPromisedComponent';
+import EOLError from '@wms_react_components/EOLError';
+import ${successComponentName} from '${successComponentFilePath}';
+import ${loadingComponentName} from '${loadingComponentFilePath}';
+
+export default EOLPromisedComponent(
+  '${componentName}_promise',
+  ${successComponentName},
+  ${loadingComponentName},
+  EOLError
+);

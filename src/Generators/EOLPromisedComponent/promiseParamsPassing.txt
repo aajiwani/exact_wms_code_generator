@@ -1,0 +1,1 @@
+${componentName}_promise_params={() => this.promiseParamsSupplier()} 

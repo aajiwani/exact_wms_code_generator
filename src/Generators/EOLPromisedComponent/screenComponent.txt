@@ -1,0 +1,38 @@
+import React, { Component } from 'react';
+import MainComponent from '${mainComponentFileName}';
+
+class ${componentName}Screen extends Component
+{
+  constructor(props)
+  {
+    super(props);
+  }
+
+  promiseMethod(params)
+  {
+    if (params && params.length > 0)
+    {
+      // You can use the supplied parameters here like:
+      // var division = params[0];
+      // The same order you passed from promiseParamsSupplier() method
+    }
+  }
+
+  promiseParamsSupplier()
+  {
+    // Supply parameters as array elements, and use them in your promise method to get the same
+    return [];
+  }
+
+  render()
+  {
+    return (
+      <MainComponent
+        ${componentName}_promise={this.promiseMethod.bind(this)}
+        ${componentName}_promise_params={() => this.promiseParamsSupplier()}
+        ${propsSupplied} />
+    )
+  }
+}
+
+export default ${componentName}Screen;

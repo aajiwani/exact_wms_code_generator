@@ -1,0 +1,7 @@
+export default class ${stringname}
+{
+  constructor()
+  {
+    this.${varName} = ${varValue}
+  }
+}

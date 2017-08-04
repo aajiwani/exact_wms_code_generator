@@ -1,0 +1,6 @@
+
+promiseParamsSupplier()
+{
+  // Supply parameters as array elements, and use them in your promise method to get the same
+  return [];
+}
